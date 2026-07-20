@@ -1,0 +1,153 @@
+/* ═══════════════════════════════════════════════
+   BSPL — BUTTON & SHARED COMPONENTS
+   components.css
+   ═══════════════════════════════════════════════ */
+
+/* ── Buttons ───────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    transform 0.2s var(--ease-spring),
+    box-shadow 0.2s var(--ease-standard),
+    background 0.2s var(--ease-standard),
+    color 0.2s var(--ease-standard);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background 0.15s ease;
+}
+.btn:hover::after { background: rgba(255,255,255,0.06); }
+.btn:active { transform: translateY(1px) scale(0.99); }
+
+/* Sizes */
+.btn-sm  { padding: 8px 16px;  font-size: 13px; height: 36px; }
+.btn-md  { padding: 11px 22px; font-size: 14px; height: 44px; }
+.btn-lg  { padding: 14px 28px; font-size: 15px; height: 52px; }
+.btn-xl  { padding: 17px 36px; font-size: 16px; height: 60px; }
+
+/* Primary */
+.btn-primary {
+  background: var(--gradient-brand);
+  color: #ffffff;
+  box-shadow: var(--shadow-md), 0 4px 20px rgba(13, 148, 136, 0.28);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl), 0 8px 32px rgba(13, 148, 136, 0.38);
+}
+
+/* Secondary */
+.btn-secondary {
+  background: transparent;
+  color: var(--color-teal-600);
+  border: 1.5px solid var(--color-teal-600);
+  box-shadow: none;
+}
+.btn-secondary:hover {
+  background: var(--color-teal-50);
+  box-shadow: var(--shadow-teal-glow);
+  transform: translateY(-1px);
+}
+
+/* Ghost */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-gray-700);
+  border: none;
+}
+.btn-ghost:hover {
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
+}
+
+/* Glass — for dark backgrounds */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(12px);
+}
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+/* Trailing icon animation */
+.btn-icon-trail {
+  transition: transform 0.2s var(--ease-spring);
+}
+.btn:hover .btn-icon-trail {
+  transform: translateX(4px);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PREMIUM APPLE-STYLE SCROLL EXPERIENCE (PROGRESS INDICATORS & PHYSICS)
+══════════════════════════════════════════════════════════════════════════════ */
+/* Top Viewport Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #10B981 0%, #06B6D4 50%, #3B82F6 100%);
+  z-index: 10000;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.7);
+  pointer-events: none;
+  transition: width 0.05s linear;
+}
+
+/* Floating Magnetic Back to Top Button */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  color: #34D399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(16, 185, 129, 0.2);
+  backdrop-filter: blur(16px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.9);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-to-top-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.scroll-to-top-btn:hover {
+  background: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
+  color: #0F172A;
+  border-color: #34D399;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.6);
+}
+

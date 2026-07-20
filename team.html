@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team — Bharat Biosense Pvt. Ltd.</title>
+  <meta name="description" content="Meet the scientific leadership and research team driving Bharat Biosense's mission in bio-intelligence, precision medicine and sustainable agriculture." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+
+  <style>
+    /* ─── PAGE BASE ─────────────────────────────────────── */
+    body {
+      background: #f5f7f5;
+      color: #1a1a1a;
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    .page-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 48px) 64px;
+    }
+
+    /* ─── PAGE HEADER ───────────────────────────────────── */
+    .team-page-header {
+      padding: 48px 0 36px;
+      border-bottom: 1.5px solid #d4e0d6;
+      margin-bottom: 44px;
+    }
+    .tph-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .tph-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #2d7a42;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .tph-eyebrow::before {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #2d7a42;
+      border-radius: 2px;
+    }
+    .tph-title {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      font-weight: 800;
+      color: #0f2e18;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .tph-desc {
+      font-size: 0.92rem;
+      color: #5a6b5e;
+      line-height: 1.7;
+      max-width: 520px;
+    }
+    .tph-stats {
+      display: flex;
+      gap: 28px;
+      flex-shrink: 0;
+      align-items: flex-end;
+    }
+    .tph-stat { text-align: center; }
+    .tph-stat-val {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1a5c2a;
+      line-height: 1;
+    }
+    .tph-stat-lbl {
+      font-size: 0.68rem;
+      color: #7a8f7d;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ─── SECTION HEADING ───────────────────────────────── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .sh-title {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0f2e18;
+      white-space: nowrap;
+      letter-spacing: -0.01em;
+    }
+    .sh-rule {
+      flex: 1;
+      height: 1px;
+      background: #d4e0d6;
+    }
+    .sh-count {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #2d7a42;
+      background: #d8eede;
+      border-radius: 20px;
+      padding: 2px 10px;
+      white-space: nowrap;
+    }
+
+    /* ════════════════════════════════════════════════════
+       FOUNDER CARD — matches reference image exactly
+    ════════════════════════════════════════════════════ */
+    .founders-section { margin-bottom: 56px; }
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .founder-card {
+      background: #ffffff;
+      border: 2px solid #2d7a42;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .founder-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    /* ── Top: photo + name row ── */
+    .fc-header {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 20px 16px;
+    }
+
+    /* Photo — actual image version */
+    .fc-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1.5px solid #d4e0d6;
+    }
+    /* Fallback initials block */
+    .fc-photo-init {
+      width: 130px;
+      height: 130px;
+      border-radius: 8px;
+      background: #eaf4ec;
+      border: 1.5px solid #b8d9be;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #1a5c2a;
+      letter-spacing: -0.03em;
+    }
+
+    .fc-name-col { flex: 1; }
+    .fc-name {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: #0f4021;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .fc-subtitle {
+      font-size: 0.82rem;
+      color: #4a6550;
+      line-height: 1.45;
+    }
+
+    /* ── Credentials body ── */
+    .fc-body {
+      padding: 0 20px 14px;
+      flex: 1;
+    }
+    .fc-cred-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .fc-cred-list li {
+      font-size: 0.845rem;
+      line-height: 1.55;
+      color: #2c3b2e;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .fc-cred-key {
+      font-weight: 700;
+      color: #0f2e18;
+      flex-shrink: 0;
+    }
+    .fc-cred-val {
+      color: #3d4f3f;
+    }
+
+    /* ── Institution logo strip ── */
+    .fc-inst-strip {
+      padding: 10px 20px 14px;
+      border-top: 1px solid #e8f0e9;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    /* Each institution: text chip styled to look like a logo badge */
+    .inst-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border: 1.5px solid #c8d9ca;
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #2c5c33;
+      background: #f4fbf5;
+      letter-spacing: 0.01em;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .inst-chip:hover {
+      border-color: #2d7a42;
+      background: #e6f4ea;
+    }
+    /* Colored accent dots per institution group */
+    .inst-chip .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Experience footer ── */
+    .fc-exp-footer {
+      background: #f7f9f7;
+      border-top: 1px solid #e0ebe1;
+      padding: 9px 20px;
+      text-align: center;
+    }
+    .fc-exp-text {
+      font-size: 0.85rem;
+      color: #3d4f3f;
+      font-weight: 500;
+    }
+    .fc-exp-text .exp-num {
+      color: #1565c0;
+      font-weight: 700;
+    }
+
+    /* ════════════════════════════════════════════════════
+       TEAM MEMBER CARDS
+    ════════════════════════════════════════════════════ */
+    .members-section { margin-bottom: 60px; }
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+      gap: 16px;
+    }
+
+    .member-card {
+      background: #ffffff;
+      border: 1.5px solid #d4e0d6;
+      border-radius: 12px;
+      padding: 24px 14px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .member-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: #2d7a42;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.22s ease;
+    }
+    .member-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+      border-color: #2d7a42;
+    }
+    .member-card:hover::after { transform: scaleX(1); }
+
+    .mc-photo-wrap { margin-bottom: 12px; }
+    .mc-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #d4e0d6;
+    }
+    .mc-photo-init {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #eaf4ec;
+      border: 2px solid #b8d9be;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #1a5c2a;
+    }
+    .mc-name {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #0f2e18;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .mc-role {
+      font-size: 0.72rem;
+      color: #2d7a42;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .mc-dept {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7a8f7d;
+      background: #f0f5f1;
+      border-radius: 20px;
+      padding: 2px 9px;
+      border: 1px solid #d4e0d6;
+    }
+
+    /* ─── JOIN CTA ────────────────────────────────────── */
+    .join-cta {
+      background: #ffffff;
+      border: 1.5px solid #d4e0d6;
+      border-radius: 14px;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .join-cta-title {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f2e18;
+      margin-bottom: 6px;
+    }
+    .join-cta-desc {
+      font-size: 0.87rem;
+      color: #5a6b5e;
+      line-height: 1.65;
+      max-width: 460px;
+    }
+    .join-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a5c2a;
+      color: #ffffff;
+      font-size: 0.87rem;
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s ease, transform 0.18s ease;
+      flex-shrink: 0;
+    }
+    .join-btn:hover { background: #2d7a42; transform: translateY(-1px); }
+
+    /* ─── FOOTER ──────────────────────────────────────── */
+    .team-footer {
+      border-top: 1px solid #d4e0d6;
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.79rem;
+      color: #7a8f7d;
+    }
+    .team-footer a { color: #2d7a42; text-decoration: none; }
+    .team-footer a:hover { text-decoration: underline; }
+
+    /* ─── REVEAL ANIMATION ─────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal.d1 { transition-delay: 0.07s; }
+    .reveal.d2 { transition-delay: 0.14s; }
+    .reveal.d3 { transition-delay: 0.21s; }
+    .reveal.d4 { transition-delay: 0.28s; }
+
+    /* ─── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 900px) {
+      .founders-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .tph-top { flex-direction: column; }
+      .tph-stats { justify-content: flex-start; }
+      .members-grid { grid-template-columns: repeat(2, 1fr); }
+      .join-cta { flex-direction: column; padding: 28px 20px; }
+    }
+    @media (max-width: 400px) {
+      .members-grid { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+  <header class="nav-wrapper" id="site-nav" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="Bharat Biosense — Home">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <img src="assets/images/logo_transparent.png" alt="Bharat Biosense Logo" width="36" height="36" style="object-fit:contain;" />
+        </div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Bharat Biosense</span>
+          <span class="nav-logo-tag">Pvt. Ltd.</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#verticals" class="nav-link">Verticals</a></li>
+        <li><a href="index.html#platform" class="nav-link">Technology</a></li>
+        <li><a href="index.html#industries" class="nav-link">Industries</a></li>
+        <li><a href="team.html" class="nav-link nav-link-active">Team</a></li>
+        <li><a href="index.html#cta" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html#cta" class="btn btn-primary btn-md" id="nav-cta">Get in Touch</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <div class="mobile-menu-header">
+        <a href="index.html" class="nav-logo" aria-label="Bharat Biosense">
+          <span class="nav-logo-name">Bharat Biosense</span>
+        </a>
+        <button class="mobile-close" id="mobile-close" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-menu-section">
+        <div class="mobile-menu-category">Explore</div>
+        <ul class="mobile-nav-links" role="list">
+          <li><a href="index.html" class="mobile-nav-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>Home</span></a></li>
+          <li><a href="index.html#about" class="mobile-nav-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>About</span></a></li>
+          <li><a href="index.html#verticals" class="mobile-nav-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span>Verticals</span></a></li>
+          <li><a href="team.html" class="mobile-nav-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2d7a42" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Our Team</span></a></li>
+          <li><a href="index.html#cta" class="mobile-nav-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>Contact</span></a></li>
+        </ul>
+      </div>
+      <a href="index.html#cta" class="btn btn-primary btn-lg mobile-cta">Get in Touch</a>
+    </div>
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+  </header>
+
+  <main id="main-content">
+  <div class="page-wrap">
+
+    <!-- ═══════════════ PAGE HEADER ═══════════════ -->
+    <header class="team-page-header">
+      <div class="tph-top">
+        <div>
+          <div class="tph-eyebrow">Bharat Biosense &mdash; People</div>
+          <h1 class="tph-title">Our Scientific Leadership<br>&amp; Research Team</h1>
+          <p class="tph-desc">A multidisciplinary collective of structural biologists, plant genomicists, neuroscientists, and innovators — united by rigorous science and a shared vision for bio-intelligence.</p>
+        </div>
+        <div class="tph-stats">
+          <div class="tph-stat">
+            <div class="tph-stat-val">3</div>
+            <div class="tph-stat-lbl">Co-Founders</div>
+          </div>
+          <div class="tph-stat">
+            <div class="tph-stat-val">13+</div>
+            <div class="tph-stat-lbl">Team Members</div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══════════════ CO-FOUNDERS ═══════════════ -->
+    <section class="founders-section" aria-labelledby="founders-title">
+      <div class="section-header">
+        <h2 class="sh-title" id="founders-title">Co-Founders</h2>
+        <div class="sh-rule"></div>
+        <span class="sh-count">3 Members</span>
+      </div>
+
+      <div class="founders-grid">
+
+        <!-- ───── Prof. Dr. Himanshu Singh ───── -->
+        <article class="founder-card reveal" id="founder-himanshu" aria-label="Prof. Dr. Himanshu Singh">
+
+          <div class="fc-header">
+            <img src="assets/images/founder_himanshu.jpg" alt="Prof. Dr. Himanshu Singh" class="fc-photo" />
+            <div class="fc-name-col">
+              <div class="fc-name">Prof. Dr. Himanshu Singh</div>
+              <div class="fc-subtitle">Advanced structural biologist and NMR expert</div>
+            </div>
+          </div>
+
+          <div class="fc-body">
+            <ul class="fc-cred-list">
+              <li>
+                <span class="fc-cred-key">Founder:</span>
+                <span class="fc-cred-val">Bharat Biosense Private Ltd.</span>
+              </li>
+              <li>
+                <span class="fc-cred-key">Assistant Professor:</span>
+                <span class="fc-cred-val">BSBE, IIT Guwahati</span>
+              </li>
+              <li>
+                <span class="fc-cred-key">Recipient of:</span>
+                <span class="fc-cred-val">Ramalingaswami Fellowship, the Ramanujan Award, and the Raman Charpak Fellowship, RSC member</span>
+              </li>
+              <li>
+                <span class="fc-cred-key">Expertise:</span>
+                <span class="fc-cred-val">Real-time cellular NMR, solution and solid-state NMR, protein structural &amp; dynamics</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Institution logos as styled chips -->
+          <div class="fc-inst-strip">
+            <span class="inst-chip">
+              <span class="dot" style="background:#0077b6;"></span> TIFR
+            </span>
+            <span class="inst-chip">
+              <span class="dot" style="background:#3a7d44;"></span> LMU München
+            </span>
+            <span class="inst-chip">
+              <span class="dot" style="background:#005f99;"></span> TU Dortmund
+            </span>
+            <span class="inst-chip">
+              <span class="dot" style="background:#8b0000;"></span> IISER Berhampur
+            </span>
+            <span class="inst-chip">
+              <span class="dot" style="background:#003d7a;"></span> IIT Guwahati
+            </span>
+          </div>
+
+          <div class="fc-exp-footer">
+            <span class="fc-exp-text">Experience: <span class="exp-num">15+ years</span></span>
+          </div>
+        </article>
+
+        <!-- ───── Dr. Shiv K Meena ───── -->
+        <article class="founder-card reveal d1" id="founder-shiv" aria-label="Dr. Shiv K Meena">
+
+          <div class="fc-header">
+            <img src="assets/images/founder_shiv.jpg" alt="Dr. Shiv K Meena" class="fc-photo" />
+            <div class="fc-name-col">
+              <div class="fc-name">Dr. Shiv K Meena</div>
+              <div class="fc-subtitle">Plant genomics &amp; sustainable agriculture Expert</div>
+            </div>
+          </div>
+
+          <div class="fc-body">
+            <ul class="fc-cred-list">
+              <li>
+                <span class="fc-cred-key">Founder:</span>
+                <span class="fc-cred-val">Bharat Biosense Private Ltd.</span>
+              </li>
+              <li>
+                <span class="fc-cred-key">Faculty Scientist:</span>
+                <span class="fc-cred-val">National Institute of Plant Genome Research (NIPGR), New Delhi</span>
+              </li>
+              <li>
+                <span class="fc-cred-key">Expertise:</span>
+                <span class="fc-cred-val">Functional characterization of noncoding transcription in plants, studying sense-antisense transcription and lncRNAs, and seeking solutions for sustainable agriculture amidst climate change challenges</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="fc-inst-strip">
+            <span class="inst-chip">
+              <span class="dot" style="background:#2e7d32;"></span> NIPGR
+            </span>
+            <span class="inst-chip">
+              <span class="dot" style="background:#4caf50;"></span> Umeå Plant Science Centre
+            </span>
+            <span class="inst-chip">
+              <span class="dot" style="background:#1b5e20;"></span> IPB
+            </span>
+          </div>
+
+          <div class="fc-exp-footer">
+            <span class="fc-exp-text">Experience: <span class="exp-num">10+ years</span></span>
+          </div>
+        </article>
+
+        <!-- ───── Dr. Anand Kant Das ───── -->
+        <article class="founder-card reveal d2" id="founder-anand" aria-label="Dr. Anand Kant Das">
+
+          <div class="fc-header">
+            <img src="assets/images/founder_anand.jpg" alt="Dr. Anand Kant Das" class="fc-photo" />
+            <div class="fc-name-col">
+              <div class="fc-name">Dr. Anand Kant Das</div>
+              <div class="fc-subtitle">Neuroscientist, Biophysicist</div>
+            </div>
+          </div>
+
+          <div class="fc-body">
+            <ul class="fc-cred-list">
+              <li>
+                <span class="fc-cred-key">Founder:</span>
+                <span class="fc-cred-val">Bharat Biosense Pvt. Ltd., MJ Novus Precision Technologies Private Limited</span>
+              </li>
+              <li>
+                <span class="fc-cred-key">Chief Advisor:</span>
+                <span class="fc-cred-val">Navriti School, Gurgaon</span>
+              </li>
+              <li>
+                <span class="fc-cred-key">Scientific Advisor:</span>
+                <span class="fc-cred-val">NextGen Immuno Therapeutics</span>
+              </li>
+              <li>
+                <span class="fc-cred-key">Member of:</span>
+                <span class="fc-cred-val">Royal Society of Biology</span>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="fc-inst-strip">
+            <span class="inst-chip">
+              <span class="dot" style="background:#c62828;"></span> TU Wien
+            </span>
+            <span class="inst-chip">
+              <span class="dot" style="background:#8b0000;"></span> Harvard University
+            </span>
+            <span class="inst-chip">
+              <span class="dot" style="background:#4a148c;"></span> University of Delhi
+            </span>
+            <span class="inst-chip">
+              <span class="dot" style="background:#7a1919;"></span> NYU Abu Dhabi
+            </span>
+            <span class="inst-chip">
+              <span class="dot" style="background:#0077b6;"></span> TIFR
+            </span>
+            <span class="inst-chip">
+              <span class="dot" style="background:#8b0000;"></span> Stanford University
+            </span>
+          </div>
+
+          <div class="fc-exp-footer">
+            <span class="fc-exp-text">Experience: <span class="exp-num">15+ years</span></span>
+          </div>
+        </article>
+
+      </div><!-- /founders-grid -->
+    </section>
+
+    <!-- ═══════════════ TEAM MEMBERS ═══════════════ -->
+    <section class="members-section" aria-labelledby="members-title">
+      <div class="section-header">
+        <h2 class="sh-title" id="members-title">Research &amp; Operations Team</h2>
+        <div class="sh-rule"></div>
+        <span class="sh-count">7 Members</span>
+      </div>
+
+      <div class="members-grid" id="members-grid">
+
+        <article class="member-card reveal" id="member-shourjyo">
+          <div class="mc-photo-wrap"><img src="assets/images/Shourjyo.png" alt="Shourjyo Mukherjee" class="mc-photo" /></div>
+          <div class="mc-name">Shourjyo Mukherjee</div>
+          <div class="mc-role">Legal Advisor</div>
+          <span class="mc-dept">B.A LLB (NALSAR), LLM (USA)</span>
+        </article>
+
+        <article class="member-card reveal d1" id="member-abhay">
+          <div class="mc-photo-wrap"><img src="assets/images/Abhay.png" alt="Abhay Asknani" class="mc-photo" /></div>
+          <div class="mc-name">Abhay Asknani</div>
+          <div class="mc-role">Finance Advisor</div>
+          <span class="mc-dept">Chartered Accountant</span>
+        </article>
+
+        <article class="member-card reveal d2" id="member-ayush">
+          <div class="mc-photo-wrap"><img src="assets/images/AYUSH.png" alt="Ayush Singh" class="mc-photo" /></div>
+          <div class="mc-name">Ayush Singh</div>
+          <div class="mc-role">Technical Lead</div>
+        </article>
+
+        <article class="member-card reveal d3" id="member-arkaprabha">
+          <div class="mc-photo-wrap"><img src="assets/images/Arkaprabha.png" alt="Arkaprabha Sarkar" class="mc-photo" /></div>
+          <div class="mc-name">Arkaprabha Sarkar</div>
+          <div class="mc-role">R&amp;D Officer</div>
+        </article>
+
+        <article class="member-card reveal" id="member-anshu">
+          <div class="mc-photo-wrap"><img src="assets/images/anshu.png" alt="Anshu Divyanshi" class="mc-photo" /></div>
+          <div class="mc-name">Anshu Divyanshi</div>
+          <div class="mc-role">R&amp;D Officer</div>
+        </article>
+
+        <article class="member-card reveal d1" id="member-beauti">
+          <div class="mc-photo-wrap"><img src="assets/images/beauti.png" alt="Beauti Singh" class="mc-photo" /></div>
+          <div class="mc-name">Beauti Singh</div>
+          <div class="mc-role">Business Development</div>
+        </article>
+
+        <article class="member-card reveal d2" id="member-preeti">
+          <div class="mc-photo-wrap"><img src="assets/images/preeti.png" alt="Preeti Yadav" class="mc-photo" /></div>
+          <div class="mc-name">Preeti Yadav</div>
+          <div class="mc-role">Human Resource</div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════ JOIN CTA ═══════════════ -->
+    <div class="join-cta">
+      <div>
+        <div class="join-cta-title">Interested in joining our research team?</div>
+        <p class="join-cta-desc">We welcome applications from researchers, scientists, and engineers passionate about bio-intelligence, sustainable agriculture, and precision medicine.</p>
+      </div>
+      <a href="index.html#cta" class="join-btn" id="team-join-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Get in Touch
+      </a>
+    </div>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="team-footer">
+      <span>&copy; 2025 Bharat Biosense Private Ltd. All rights reserved.</span>
+      <a href="index.html">&larr; Back to Homepage</a>
+    </footer>
+
+  </div><!-- /page-wrap -->
+  </main>
+
+  <script>
+    /* ── Hamburger ─────────────────────────────── */
+    const ham    = document.getElementById('nav-hamburger');
+    const menu   = document.getElementById('mobile-menu');
+    const overlay= document.getElementById('mobile-overlay');
+    const close  = document.getElementById('mobile-close');
+    const open   = () => { ham.setAttribute('aria-expanded','true');  menu.classList.add('open');  overlay.classList.add('open');  };
+    const shut   = () => { ham.setAttribute('aria-expanded','false'); menu.classList.remove('open'); overlay.classList.remove('open'); };
+    if (ham)     ham.addEventListener('click', open);
+    if (close)   close.addEventListener('click', shut);
+    if (overlay) overlay.addEventListener('click', shut);
+
+    /* ── Sticky nav ───────────────────────────── */
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20), { passive:true });
+
+    /* ── Scroll reveal ───────────────────────── */
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.10, rootMargin: '0px 0px -24px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

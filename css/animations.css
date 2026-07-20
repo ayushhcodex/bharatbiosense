@@ -1,0 +1,127 @@
+/* ═══════════════════════════════════════════════
+   BSPL — ANIMATIONS
+   animations.css
+   ═══════════════════════════════════════════════ */
+
+/* ── Keyframes ─────────────────────────────────── */
+
+@keyframes orb-float {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(24px, -24px) scale(1.06); }
+  66%  { transform: translate(-18px, 12px) scale(0.97); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes pulse-expand {
+  0%   { r: 50; opacity: 0.4; }
+  100% { r: 80; opacity: 0; }
+}
+
+@keyframes chip-float {
+  0%   { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes net-breathe {
+  from { opacity: 0.7; }
+  to   { opacity: 1.0; }
+}
+
+@keyframes hub-pulse {
+  0%   { transform: scale(1);   opacity: 0.5; }
+  100% { transform: scale(1.8); opacity: 0;   }
+}
+
+@keyframes scroll-line {
+  0%   { transform: scaleY(1); transform-origin: top; }
+  50%  { transform: scaleY(0); transform-origin: top; }
+  50.001% { transform-origin: bottom; }
+  100% { transform: scaleY(1); transform-origin: bottom; }
+}
+
+@keyframes dna-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes dash-move {
+  from { stroke-dashoffset: 20; }
+  to   { stroke-dashoffset: 0;  }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideRight {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeSlideLeft {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position:  200% 0; }
+}
+
+/* ── Scroll Reveal ─────────────────────────────── */
+.reveal-up,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.reveal-up    { transform: translateY(28px); }
+.reveal-left  { transform: translateX(-28px); }
+.reveal-right { transform: translateX(28px); }
+
+.reveal-up.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible {
+  animation: none;
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.65s var(--ease-enter) var(--delay, 0ms),
+    transform 0.65s var(--ease-enter) var(--delay, 0ms);
+}
+
+/* Force visible immediately for no-JS */
+.no-js .reveal-up,
+.no-js .reveal-left,
+.no-js .reveal-right {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Reduced Motion ────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .orb, .hero-ring, .hero-chip,
+  .hub-pulse-ring, .scroll-indicator,
+  .connector-line, .dna-strand,
+  .pulse-ring {
+    animation: none !important;
+  }
+}

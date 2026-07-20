@@ -1,0 +1,107 @@
+/* ═══════════════════════════════════════════════
+   BSPL DESIGN SYSTEM — CSS TOKENS
+   tokens.css
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* ── COLORS ─────────────────────────────────── */
+  --color-teal-50:    #EFFAF9;
+  --color-teal-100:   #CCEFF0;
+  --color-teal-400:   #2DD4BF;
+  --color-teal-600:   #0D9488;
+  --color-teal-800:   #115E59;
+  --color-emerald-400:#34D399;
+  --color-emerald-600:#059669;
+  --color-blue-400:   #60A5FA;
+  --color-blue-500:   #3B82F6;
+  --color-blue-700:   #1D4ED8;
+  --color-blue-900:   #1E3A5F;
+  --color-white:      #FFFFFF;
+  --color-gray-25:    #FAFAFA;
+  --color-gray-50:    #F8FAFC;
+  --color-gray-100:   #F1F5F9;
+  --color-gray-200:   #E2E8F0;
+  --color-gray-300:   #CBD5E1;
+  --color-gray-400:   #94A3B8;
+  --color-gray-500:   #64748B;
+  --color-gray-600:   #475569;
+  --color-gray-700:   #334155;
+  --color-gray-800:   #1E293B;
+  --color-gray-900:   #0F172A;
+  --color-success:    #059669;
+  --color-error:      #DC2626;
+
+  /* ── TYPOGRAPHY ──────────────────────────────── */
+  --font-display: 'Plus Jakarta Sans', 'DM Sans', system-ui, sans-serif;
+  --font-body:    'Inter', 'DM Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── SPACING ─────────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  28px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-28: 112px;
+  --space-32: 128px;
+
+  /* ── BORDER RADIUS ───────────────────────────── */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+  --radius-full: 9999px;
+
+  /* ── SHADOWS ─────────────────────────────────── */
+  --shadow-xs:  0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm:  0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md:  0 4px 6px rgba(15, 23, 42, 0.05), 0 2px 4px rgba(15, 23, 42, 0.04);
+  --shadow-lg:  0 10px 15px rgba(15, 23, 42, 0.06), 0 4px 6px rgba(15, 23, 42, 0.04);
+  --shadow-xl:  0 20px 25px rgba(15, 23, 42, 0.08), 0 8px 10px rgba(15, 23, 42, 0.04);
+  --shadow-2xl: 0 40px 60px rgba(15, 23, 42, 0.12), 0 16px 20px rgba(15, 23, 42, 0.06);
+  --shadow-teal-glow: 0 0 0 3px rgba(13, 148, 136, 0.15), 0 8px 24px rgba(13, 148, 136, 0.15);
+  --shadow-blue-glow: 0 0 0 3px rgba(59, 130, 246, 0.15), 0 8px 24px rgba(59, 130, 246, 0.12);
+  --shadow-inset: inset 0 2px 4px rgba(15, 23, 42, 0.04);
+
+  /* ── GRADIENTS ───────────────────────────────── */
+  --gradient-brand: linear-gradient(135deg, #0D9488 0%, #115E59 100%);
+  --gradient-brand-soft: linear-gradient(135deg, rgba(13,148,136,0.12) 0%, rgba(17,94,89,0.12) 100%);
+  --gradient-hero:  linear-gradient(160deg, #F0FEFE 0%, #F0F9FF 100%);
+  --gradient-dark:  linear-gradient(160deg, #0F172A 0%, #13243A 100%);
+  --gradient-text:  linear-gradient(135deg, #0D9488, #115E59);
+  --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.36) 100%);
+  --gradient-mesh:
+    radial-gradient(at 15% 25%, hsla(177, 84%, 32%, 0.13) 0px, transparent 50%),
+    radial-gradient(at 80% 10%, hsla(175, 91%, 20%, 0.09) 0px, transparent 50%),
+    radial-gradient(at 55% 80%, hsla(172, 94%, 30%, 0.08) 0px, transparent 45%),
+    radial-gradient(at 90% 70%, hsla(177, 63%, 51%, 0.06) 0px, transparent 40%);
+  --gradient-teal-wash: linear-gradient(135deg, #F0FEFE 0%, #F0FFFA 100%);
+
+  /* ── EASINGS ─────────────────────────────────── */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-enter:    cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-exit:     cubic-bezier(0.4, 0, 1, 1);
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* ── Z-INDEX ─────────────────────────────────── */
+  --z-below:    -1;
+  --z-base:      0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+}

@@ -1,0 +1,194 @@
+/* ═══════════════════════════════════════════════
+   BSPL — RESPONSIVE STYLES
+   responsive.css
+   ═══════════════════════════════════════════════ */
+
+/* ── Large desktop (≤1440px) ───────────────────── */
+@media (max-width: 1440px) {
+  .hero-chip-1 { left: -2%; }
+  .hero-chip-2 { right: -2%; }
+  .hero-chip-3 { left: -2%; }
+  .hero-chip-4 { right: -2%; }
+}
+
+/* ── Laptop (≤1280px) ──────────────────────────── */
+@media (max-width: 1280px) {
+  .hero-heading { font-size: clamp(2.25rem, 4.5vw, 3.5rem); }
+  .nav-links { gap: 2px; }
+  .nav-link { padding: 6px 9px; font-size: 13.5px; }
+
+  .hero-chip { display: none; }
+  .ecosystem-connectors { display: none; }
+  .platform-ecosystem { gap: var(--space-6); }
+  .ecosystem-node-card { width: 190px; }
+}
+
+/* ── Tablet landscape (≤1024px) ────────────────── */
+@media (max-width: 1024px) {
+  /* Nav */
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  #nav-cta { display: none; }
+
+  /* Hero */
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    text-align: center;
+  }
+  .hero-subheading { margin-inline: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-data-strip { margin-inline: auto; }
+  .hero-visual { order: -1; }
+  .hero-illustration-wrapper { width: min(400px, 80vw); }
+
+  /* About */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+  .about-visual { display: flex; justify-content: center; }
+  .about-visual-card { max-width: 320px; }
+  .about-stat-chip-1 { left: -10px; bottom: 20px; }
+  .about-stat-chip-2 { right: -10px; top: 20px; }
+  .about-content { padding-left: 0; text-align: center; }
+  .about-pillars { align-items: flex-start; }
+  .about-cta { width: 100%; justify-content: center; }
+
+  /* Verticals */
+  .verticals-grid { grid-template-columns: 1fr; gap: var(--space-5); }
+
+  /* Platform */
+  .platform-ecosystem {
+    flex-direction: column;
+    align-items: center;
+  }
+  .node-ai, .node-biology, .node-molecular { order: 1; }
+  .ecosystem-hub { order: 0; margin-bottom: var(--space-4); }
+  .ecosystem-node-card { width: 280px; }
+
+  /* Technologies */
+  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Industries */
+  .industries-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Why */
+  .why-grid { grid-template-columns: 1fr; }
+  .why-stats-bar { gap: var(--space-6); padding: var(--space-6) var(--space-8); }
+
+  /* Footer */
+  .footer-top { grid-template-columns: 1fr; gap: var(--space-10); }
+  .footer-links-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Tablet portrait (≤768px) ──────────────────── */
+@media (max-width: 768px) {
+  /* Typography */
+  h1 { font-size: clamp(2rem, 8vw, 2.75rem); letter-spacing: -0.03em; }
+  h2 { font-size: clamp(1.5rem, 6vw, 2.25rem); }
+
+  /* Section padding */
+  .about-section,
+  .verticals-section,
+  .platform-section,
+  .tech-section,
+  .industries-section,
+  .why-section,
+  .cta-section,
+  .site-footer { padding-block: var(--space-20); }
+
+  /* Hero */
+  .hero-section { padding-block: 100px 60px; }
+  .hero-data-strip {
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: var(--space-4);
+  }
+  .data-divider { display: none; }
+
+  /* Tech grid */
+  .tech-grid { grid-template-columns: 1fr; }
+
+  /* Industries */
+  .industries-grid { grid-template-columns: 1fr; }
+
+  /* Why stats */
+  .why-stats-bar { flex-direction: column; gap: var(--space-5); padding: var(--space-6); }
+  .why-stat-divider { width: 60px; height: 1px; }
+  .why-grid { grid-template-columns: 1fr; }
+
+  /* Platform benefits */
+  .platform-benefits { flex-direction: column; gap: var(--space-5); padding: var(--space-6); }
+  .platform-benefit-divider { width: 60px; height: 1px; }
+
+  /* CTA */
+  .cta-actions { flex-direction: column; align-items: center; }
+  .cta-actions .btn { width: 100%; max-width: 300px; justify-content: center; }
+  .cta-contact-strip { flex-direction: column; gap: var(--space-3); }
+  .cta-contact-divider { display: none; }
+
+  /* Footer */
+  .footer-links-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+}
+
+/* ── Phone (≤480px) ────────────────────────────── */
+@media (max-width: 480px) {
+  /* Touch target & button optimization */
+  .btn {
+    min-height: 48px;
+    padding-block: 12px;
+  }
+  .hero-actions { flex-direction: column; align-items: center; width: 100%; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  /* Section headings & text */
+  .section-heading { font-size: clamp(1.5rem, 7vw, 1.875rem); }
+  .section-descriptor { font-size: 15px; }
+
+  /* Product & vertical cards */
+  .vertical-card, .tech-card, .industry-card, .why-card {
+    padding: var(--space-6) var(--space-5);
+  }
+  .oxyaasn-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+  .oxyaasn-stat-card {
+    padding: var(--space-4);
+  }
+  .oxyaasn-stat-value {
+    font-size: 1.5rem;
+  }
+  .bioisotope-img-stats {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
+  }
+
+  /* Footer links */
+  .footer-links-grid { grid-template-columns: 1fr 1fr; gap: var(--space-6) var(--space-4); }
+  .footer-link { padding-block: 6px; display: inline-block; }
+  .footer-legal { gap: var(--space-4); flex-wrap: wrap; }
+}
+
+/* ── Ultra small (≤375px) ──────────────────────── */
+@media (max-width: 375px) {
+  .container { padding-inline: var(--space-4); }
+  .footer-links-grid { grid-template-columns: 1fr; }
+  .oxyaasn-stats-grid { grid-template-columns: 1fr; }
+  .btn { font-size: 14px; }
+}
+
+/* ── Touch target safety ───────────────────────── */
+@media (hover: none) {
+  .vertical-card:hover,
+  .tech-card:hover,
+  .industry-card:hover,
+  .why-card:hover {
+    transform: none;
+  }
+  .btn:hover { transform: none; }
+}
